@@ -88,7 +88,7 @@ public class UserService extends BaseService {
     // Check the specified handle already exists
     User userWithInputHandle = userRepository.findByHandle(request.getHandle());
     if(userWithInputHandle != null) {
-      if(userWithInputHandle.getId().equals(user.getId())) {
+      if(userWithInputHandle.getId() == user.getId()) {
         // nothing to update, return the user identified by the id
         return user;
       } else {

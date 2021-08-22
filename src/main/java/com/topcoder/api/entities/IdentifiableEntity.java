@@ -30,7 +30,13 @@ public class IdentifiableEntity {
   /**
    * The entity id.
    */
+  
+
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private UUID id;
+  private long id;
+
+//   @Id
+//   @GeneratedValue(strategy = GenerationType.AUTO)
+//   private long id;
 }

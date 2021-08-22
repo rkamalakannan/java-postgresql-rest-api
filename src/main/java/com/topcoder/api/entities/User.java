@@ -3,6 +3,8 @@
  */
 package com.topcoder.api.entities;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -26,7 +28,7 @@ import lombok.ToString;
 @Setter
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class User extends IdentifiableEntity {
+public class User extends IdentifiableEntity implements Serializable {
   /**
    * The user handle.
    */
