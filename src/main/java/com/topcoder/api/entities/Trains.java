@@ -1,9 +1,7 @@
 package com.topcoder.api.entities;
 
 import java.io.Serializable;
-import java.util.UUID;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;

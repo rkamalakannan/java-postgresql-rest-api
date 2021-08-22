@@ -3,20 +3,16 @@ package com.topcoder.api.controllers;
 import java.util.List;
 import java.util.Optional;
 
-import javax.websocket.OnError;
-
 import com.topcoder.api.entities.Trains;
 import com.topcoder.api.repositories.TrainRepository;
 import com.topcoder.api.services.TrainService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -56,7 +52,7 @@ public class TrainController {
   public ResponseEntity<?> getTrainsById(@PathVariable long id) {
     Optional<Trains> trains = trainRepository.findById(id);
 
-    if (trains.stream().count() > 0) {
+    if (trains.isPresent()) {
       return ResponseEntity.status(HttpStatus.OK).body(trains);
     }
 
